@@ -12,39 +12,62 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('football_info')
 
-#manu = SHEET.worksheet('man_utd')
-#manc = SHEET.worksheet('man_city')
-#chelsea = SHEET.worksheet('chelsea')
-#livepool = SHEET.worksheet('liverpool')
-
 def user_commands():
     """
     gives commands the user is able to input to receive different data sets
     """
-    print("Hi! Welcome to a football stats generator")
-    print("The available options are as follows")
     
-    manu = SHEET.worksheet('man_utd')
-    manc = SHEET.worksheet('man_city')
-    chelsea = SHEET.worksheet('chelsea')
-    livepool = SHEET.worksheet('liverpool')
+    manu = SHEET.worksheet('man_utd').get_all_values()
+    manc = SHEET.worksheet('man_city').get_all_values()
+    chelsea = SHEET.worksheet('chelsea').get_all_values()
+    liverpool = SHEET.worksheet('liverpool').get_all_values()
+    goalkeepers = SHEET.worksheet('goalkeepers').get_all_values()
 
-    options = ['man united, man city, liverpool, chelsea']
-        
+    options = ['man united, man city, liverpool, chelsea']    
     for i in range(len(options)):
         print(str(i+1) + ":", options[i])
 
+    options_2 = ['goalkeepers, defenders, midfielders, forwards']
+    for i in range(len(options_2)):
+        print(str(i+2) + ":", options_2[i])
+    
+    options_3 = ['appearances, goals scored, clean sheets, age']
+    for i in range(len(options_3)):
+        print(str(i+3) + ":", options_3[i])
 
     value = input("Please enter a string:\n")
     print(f"You have entered {value}")
-        
-        
 
-user_commands()
 
-#def input_commands ()
-   # """
-   # Sets up the different string options that can be used as commands.
-    #Tells the user whether what they inputted in a valid command and if not,
-    #returns a message telling them it is not valid
-    #"""
+    if value == 'man united':
+        print(manu)
+    elif value == 'man city':
+        print(manc)
+    elif value == 'liverpool':
+        print(liverpool)
+    elif value == 'chelsea':
+        print(chelsea)
+    elif value == 'appearances':
+        print(chelsea)
+    elif value == 'goals scored':
+        print(chelsea)
+    elif value == 'clean sheets':
+        print(chelsea)
+    elif value == 'age':
+        print(chelsea)
+    else:
+        print('Not an available option: Please enter correct option.')  
+
+    return options  
+        
+print("Hi! Welcome to a football stats generator")
+print("The available options are as follows")
+
+
+def main():
+    user_commands()
+    #manu_options()
+    #manc_options()
+    
+
+main()
