@@ -23,8 +23,6 @@ data = {
 team_name = ""
 position = ""
 
-options = ['return', 'age', 'goals scored', 'apperances', 'clean sheets', 'goalkeepers', 'defenders', 'midfielders', 'forwards', 'home']
-
 def user_commands():
     """
     gives commands the user is able to input to receive different data sets
@@ -46,7 +44,7 @@ def user_commands():
 
 def user_commands_2(team_name):
 
-    options_1 = 'goalkeeper, defender, midfielder, forward, home'
+    options_1 = 'goalkeeper, defender, midfielder,\n forward, home'
     print(f"1: {options_1}")
 
     position = input("Please enter a string:\n")
@@ -60,8 +58,7 @@ def user_commands_2(team_name):
     if position == 'home':
         print("Hi! Welcome to a football stats generator")
         print("The available options are as follows:")
-        main()
-        
+        main()   
 
     res = [i for i in data[team_name] if position.capitalize() in i]
     print(tabulate(res))
@@ -84,7 +81,12 @@ def top_scorers():
     if team_name == 'home':
         print("Hi! Welcome to a football stats generator")
         print("The available options are as follows:")
-        main()
+        main() 
+
+    while team_name not in (options):
+        print("You entered a wrong option, Please enter a correct option")
+        print(f"1: {options}")
+        team_name = input()
 
     for row in data[team_name]:
         if "Goals Scored" in row:
@@ -99,7 +101,10 @@ def top_scorers():
     print(tabulate(goal_scorers))
 
 def appearances():
-
+    """
+    function to compare players appearances and return a value if their appearances after over 100 for their team.
+    It then prints the results to the terminal/console
+    """
     player_apps = []
 
     options = 'man united, man city, liverpool, chelsea, home'   
@@ -111,6 +116,11 @@ def appearances():
         print("Hi! Welcome to a football stats generator")
         print("The available options are as follows:")
         main()
+
+    while team_name not in (options):
+        print("You entered a wrong option, Please enter a correct option")
+        print(f"1: {options}")
+        team_name = input()
 
     for row in data[team_name]:
         if "Appearances" in row:
@@ -124,6 +134,70 @@ def appearances():
     player_apps[:4]
     print(tabulate(player_apps))
 
+def ages():
+    """
+    This function organising players within a team by their ages.
+    Oldest at the top to the youngest at the bottom
+    """
+    player_ages = []
+
+    options = 'man united, man city, liverpool, chelsea, home'   
+    print(f"1: {options}")
+    team_name = input("Please enter team name to see players ages in an ordered list:\n")
+    print(f"you have entered: {team_name}")
+
+    if team_name == 'home':
+        print("Hi! Welcome to a football stats generator")
+        print("The available options are as follows:")
+        main()
+
+    while team_name not in (options):
+        print("You entered a wrong option, Please enter a correct option")
+        print(f"1: {options}")
+        team_name = input()
+
+    for row in data[team_name]:
+        if "Age" in row:
+            continue
+        if int(row[5]) > 0:
+            player_ages.append(row)
+
+    player_ages.sort(key=lambda x: int(x[5]))
+    player_ages.reverse()
+    player_ages[:4]
+    print(tabulate(player_ages))
+
+def overall_top_stats():
+
+    overall_top_scorer = []
+
+    options = 'most goals', 'most appearances', 'most clean sheets, home'
+    print(f"1: {options}")
+    choice = input("Please enter an option to see the overall top players:\n")
+    print(f"you have entered: {team_name}")
+
+    if choice == 'home':
+        print("Hi! Welcome to a football stats generator")
+        print("The available options are as follows:")
+        main()
+
+    while choice not in (options):
+        print("You entered a wrong option, Please enter a correct option")
+        print(f"1: {options}")
+        choice = input()
+    
+    for value in data.keys():
+        for row in data[value]:
+            if "Goals Scored" in row:
+                continue
+            if int(row[3]) > 50:
+                overall_top_scorer.append(row)
+
+        overall_top_scorer.sort(key=lambda x: int(x[3]))
+        overall_top_scorer.reverse()
+        overall_top_scorer[:10]
+        print(tabulate(overall_top_scorer))
+
 
 def main():
     """
@@ -133,5 +207,7 @@ def main():
     user_commands_2(team_name)
     top_scorers()
     appearances()
+    ages()
+    overall_top_stats()
 
 main()
