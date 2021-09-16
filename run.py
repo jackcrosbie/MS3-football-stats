@@ -20,6 +20,8 @@ data = {
     "liverpool": SHEET.worksheet('liverpool').get_all_values()
 }
 
+options = ['return', 'age', 'goals scored', 'apperances', 'clean sheets', 'goalkeepers', 'defenders', 'midfielders', 'forwards', 'home']
+
 def user_commands():
     """
     gives commands the user is able to input to receive different data sets
@@ -28,39 +30,55 @@ def user_commands():
     options = 'man united, man city, liverpool, chelsea'   
     print(f"1: {options}")
 
-    options_2 = 'goalkeepers, defenders, midfielders, forwards'
-    print(f"2: {options_2}")
+    team_name = input("Please enter a string:\n")
+    print(f"You have entered {team_name}\n")
 
-    options_3 = 'appearances, goals scored, clean sheets, age'
-    print(f"3: {options_3}")
-
-    value = input("Please enter a string:\n")
-    print(f"You have entered {value}\n")
-
-    while value not in data:
+    while team_name not in data:
         print("You entered a wrong option, Please enter a correct option")
         print(f"1: {options}")
-        value = input()
+        team_name = input()
 
-    print(tabulate(data[value]))
+    print(tabulate(data[team_name]))
+    
 
 def user_commands_2():
 
-    options = 'Back, Top Scorers, Appearances'
-    print(f"Next Options:")
-
-    options_1 = 'goalkeepers, defenders, midfielders, forwards'
+    options_1 = 'goalkeepers, defenders, midfielders, forwards, home'
     print(f"1: {options_1}")
 
-    options_2 = 'appearances, goals scored, clean sheets, age'
-    print(f"2: {options_2}")
+    position = input("Please enter a string:\n")
+    print(f"You have entered {position}\n")
 
-    value = input("Please enter a string:\n")
-    print(f"You have entered {value}\n")
+    while position not in (options):
+        print("You entered a wrong option, Please enter a correct option")
+        print(f"1: {options_1}")
+        position = input()
 
+    if position == 'home':
+        main()
+
+    res = [i for i in data['man united'] if "Forward" in i]
+    
+    print(tabulate(res))
 
 print("Hi! Welcome to a football stats generator")
 print("The available options are as follows:")
+
+def top_scorer():
+    """
+    Takes the goal scoring data from the spreadsheet and present it's to the user
+    with the list ordered by the most goals scored per team down to the least goals scored
+    """
+    options = 'man united, man city, liverpool, chelsea'   
+    print(f"1: {options}")
+    team_name = input("Please enter team name to see top scorers for that team:\n")
+    print(f"you have entered: {team_name}")
+
+    res = [i for i in data['chelsea'] if "Goals Scored" in i]
+    res.col()
+    print(tabulate(res))
+
+    
 
 def main():
     """
@@ -68,5 +86,6 @@ def main():
     """
     user_commands()
     user_commands_2()
+    top_scorer()
 
 main()
