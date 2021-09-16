@@ -37,21 +37,17 @@ def user_commands():
     value = input("Please enter a string:\n")
     print(f"You have entered {value}\n")
 
-    if value in ['man united', 'man city', 'liverpool', 'chelsea']:
-        print(tabulate(data[value]))
-    elif value not in ['man united', 'man city', 'liverpool', 'chelsea']:
-        print("You have not entered a correct option!")
-    else:
-        exit()
+    while value not in data:
+        print("You entered a wrong option, Please enter a correct option")
+        print(f"1: {options}")
+        value = input()
 
+    print(tabulate(data[value]))
+
+def user_commands_2():
 
     options = 'Back, Top Scorers, Appearances'
     print(f"Next Options:")
-
-print("Hi! Welcome to a football stats generator")
-print("The available options are as follows:")
-
-def user_commands_2():
 
     options_1 = 'goalkeepers, defenders, midfielders, forwards'
     print(f"1: {options_1}")
@@ -62,6 +58,9 @@ def user_commands_2():
     value = input("Please enter a string:\n")
     print(f"You have entered {value}\n")
 
+
+print("Hi! Welcome to a football stats generator")
+print("The available options are as follows:")
 
 def main():
     """
