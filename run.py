@@ -1,7 +1,6 @@
 import gspread
 from google.oauth2.service_account import Credentials
 from tabulate import tabulate
-import pyinputplus as pyip
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -29,7 +28,6 @@ def user_commands():
     """
     gives commands the user is able to input to receive different data sets
     """
-
     options = 'man united, man city, liverpool, chelsea'   
     print(f"1: {options}")
 
@@ -45,7 +43,10 @@ def user_commands():
     return team_name 
 
 def user_commands_2(team_name):
-
+    """
+    function to see players of a set position from data received from first input.
+    Players can be goalkeepers, defenders, midfielders or forwards
+    """
     options_1 = 'goalkeeper, defender, midfielder,\nforward, home'
     print(f"1: {options_1}")
 
