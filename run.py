@@ -1,6 +1,7 @@
 import gspread
 from google.oauth2.service_account import Credentials
 from tabulate import tabulate
+import pyinputplus as pyip
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -22,6 +23,7 @@ data = {
 
 team_name = ""
 position = ""
+top_stats = ""
 
 def user_commands():
     """
@@ -44,19 +46,19 @@ def user_commands():
 
 def user_commands_2(team_name):
 
-    options_1 = 'goalkeeper, defender, midfielder,\n forward, home'
+    options_1 = 'goalkeeper, defender, midfielder,\nforward, home'
     print(f"1: {options_1}")
 
-    position = input("Please enter a string:\n")
+    position = input("\nPlease enter a string:\n")
     print(f"You have entered {position}\n")
 
     while position not in (options_1):
-        print("You entered a wrong option, Please enter a correct option")
+        print("\nYou entered a wrong option, Please enter a correct option")
         print(f"1: {options_1}")
         position = input()
 
     if position == 'home':
-        print("Hi! Welcome to a football stats generator")
+        print("Hi! Welcome to a Football Stats Generator")
         print("The available options are as follows:")
         main()   
 
@@ -75,7 +77,7 @@ def top_scorers():
 
     options = 'man united, man city, liverpool, chelsea, home'   
     print(f"1: {options}")
-    team_name = input("Please enter team name to see top scorers for that team:\n")
+    team_name = input("\nPlease enter team name to see top scorers for that team:\n")
     print(f"you have entered: {team_name}")
 
     if team_name == 'home':
@@ -84,7 +86,7 @@ def top_scorers():
         main() 
 
     while team_name not in (options):
-        print("You entered a wrong option, Please enter a correct option")
+        print("\nYou entered a wrong option, Please enter a correct option")
         print(f"1: {options}")
         team_name = input()
 
@@ -109,7 +111,7 @@ def appearances():
 
     options = 'man united, man city, liverpool, chelsea, home'   
     print(f"1: {options}")
-    team_name = input("Please enter team name to see players with over 100 appearances for that team:\n")
+    team_name = input("\nPlease enter team name to see players with over 100 appearances for that team:\n")
     print(f"you have entered: {team_name}")
 
     if team_name == 'home':
@@ -118,7 +120,7 @@ def appearances():
         main()
 
     while team_name not in (options):
-        print("You entered a wrong option, Please enter a correct option")
+        print("\nYou entered a wrong option, Please enter a correct option")
         print(f"1: {options}")
         team_name = input()
 
@@ -143,7 +145,7 @@ def ages():
 
     options = 'man united, man city, liverpool, chelsea, home'   
     print(f"1: {options}")
-    team_name = input("Please enter team name to see players ages in an ordered list:\n")
+    team_name = input("\nPlease enter team name to see players ages in an ordered list:\n")
     print(f"you have entered: {team_name}")
 
     if team_name == 'home':
@@ -152,7 +154,7 @@ def ages():
         main()
 
     while team_name not in (options):
-        print("You entered a wrong option, Please enter a correct option")
+        print("\nYou entered a wrong option, Please enter a correct option")
         print(f"1: {options}")
         team_name = input()
 
@@ -169,35 +171,34 @@ def ages():
 
 
 #def overall_top_stats():
-
-#    overall_top_scorer = []
-
-#    options = 'most goals', 'most appearances', 'most clean sheets, home'
+#
+#
+#    options = 'most goals, most appearances, most clean sheets, home'
 #    print(f"1: {options}")
-#    choice = input("Please enter an option to see the overall top players:\n")
-#    print(f"you have entered: {team_name}")
+#    top_stats = input("Please enter an option to see the overall top players:\n")
+#    print(f"you have entered: {top_stats}")
 
-#    if choice == 'home':
+#    if top_stats == 'home':
 #        print("Hi! Welcome to a football stats generator")
 #        print("The available options are as follows:")
 #        main()
 
-#    while choice not in (options):
+#    while top_stats not in options:
 #        print("You entered a wrong option, Please enter a correct option")
 #        print(f"1: {options}")
-#        choice = input()
+#        top_stats = input()
     
 #    for value in data.keys():
 #        for row in data[value]:
-#            if "Goals Scored" in row:
+#            if f"{top_stats}" in row:
 #                continue
-#            if int(row[3]) > 50:
-#                overall_top_scorer.append(row)
+#            if int(row[""]) > 50:
+#                overall_top_stats.append(row)
 
-#        overall_top_scorer.sort(key=lambda x: int(x[3]))
-#        overall_top_scorer.reverse()
-#        overall_top_scorer[:10]
-#        print(tabulate(overall_top_scorer))
+#        overall_top_stats.sort(key=lambda x: int(x[3]))
+#        overall_top_stats.reverse()
+#        overall_top_stats[:10]
+#        print(tabulate[top_stats])
 
 def repeat():
     
@@ -222,5 +223,6 @@ def main():
     ages()
     #overall_top_stats()
     repeat()
+
 main()
 
