@@ -167,36 +167,48 @@ def ages():
     player_ages[:4]
     print(tabulate(player_ages))
 
-def overall_top_stats():
 
-    overall_top_scorer = []
+#def overall_top_stats():
 
-    options = 'most goals', 'most appearances', 'most clean sheets, home'
-    print(f"1: {options}")
-    choice = input("Please enter an option to see the overall top players:\n")
-    print(f"you have entered: {team_name}")
+#    overall_top_scorer = []
 
-    if choice == 'home':
-        print("Hi! Welcome to a football stats generator")
-        print("The available options are as follows:")
-        main()
+#    options = 'most goals', 'most appearances', 'most clean sheets, home'
+#    print(f"1: {options}")
+#    choice = input("Please enter an option to see the overall top players:\n")
+#    print(f"you have entered: {team_name}")
 
-    while choice not in (options):
-        print("You entered a wrong option, Please enter a correct option")
-        print(f"1: {options}")
-        choice = input()
+#    if choice == 'home':
+#        print("Hi! Welcome to a football stats generator")
+#        print("The available options are as follows:")
+#        main()
+
+#    while choice not in (options):
+#        print("You entered a wrong option, Please enter a correct option")
+#        print(f"1: {options}")
+#        choice = input()
     
-    for value in data.keys():
-        for row in data[value]:
-            if "Goals Scored" in row:
-                continue
-            if int(row[3]) > 50:
-                overall_top_scorer.append(row)
+#    for value in data.keys():
+#        for row in data[value]:
+#            if "Goals Scored" in row:
+#                continue
+#            if int(row[3]) > 50:
+#                overall_top_scorer.append(row)
 
-        overall_top_scorer.sort(key=lambda x: int(x[3]))
-        overall_top_scorer.reverse()
-        overall_top_scorer[:10]
-        print(tabulate(overall_top_scorer))
+#        overall_top_scorer.sort(key=lambda x: int(x[3]))
+#        overall_top_scorer.reverse()
+#        overall_top_scorer[:10]
+#        print(tabulate(overall_top_scorer))
+
+def repeat():
+    
+    print("Do you want to go back to the start?")
+    ans = input()
+    if ans == 'yes':
+        main()
+    elif ans == 'no':
+        exit()
+
+
 
 
 def main():
@@ -208,6 +220,7 @@ def main():
     top_scorers()
     appearances()
     ages()
-    overall_top_stats()
-
+    #overall_top_stats()
+    repeat()
 main()
+
