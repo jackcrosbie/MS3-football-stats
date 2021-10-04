@@ -25,11 +25,12 @@ team_name = ""
 position = ""
 top_stats = ""
 
+
 def user_commands():
     """
     gives commands the user is able to input to receive different data sets
     """
-    options = 'man united, man city, liverpool, chelsea'   
+    options = 'man united, man city, liverpool, chelsea'
     print(f"1: {options}")
 
     team_name = input("Please enter a string:\n")
@@ -41,11 +42,13 @@ def user_commands():
         team_name = input()
 
     print(tabulate(data[team_name]))
-    return team_name 
+    return team_name
+
 
 def user_commands_2(team_name):
     """
-    function to see players of a set position from data received from first input.
+    function to see players of a set position
+    from data received from first input.
     Players can be goalkeepers, defenders, midfielders or forwards
     """
     options_1 = 'goalkeeper, defender, midfielder,\nforward, home'
@@ -62,7 +65,7 @@ def user_commands_2(team_name):
     if position == 'home':
         print("Hi! Welcome to a Football Stats Generator")
         print("The available options are as follows:")
-        main()   
+        main()
 
     res = [i for i in data[team_name] if position.capitalize() in i]
     print(tabulate(res))
@@ -70,22 +73,25 @@ def user_commands_2(team_name):
 print("Hi! Welcome to a football stats generator")
 print("The available options are as follows:")
 
+
 def top_scorers():
     """
-    Takes the goal scoring data from the spreadsheet and present it's to the user
-    with the list ordered by the most goals scored per team to the least.
+    Takes the goal scoring data from the
+    spreadsheet and present it to the user
+    with the list ordered by the most goals
+    scored per team.
     """
     goal_scorers = []
 
-    options = 'man united, man city, liverpool, chelsea, home'   
+    options = 'man united, man city, liverpool, chelsea, home'
     print(f"1: {options}")
-    team_name = input("\nPlease enter team name to see top scorers for that team:\n")
+    team_name = input("\nPlease Enter Team To See Top Goal Scorers:\n")
     print(f"you have entered: {team_name}")
 
     if team_name == 'home':
         print("Hi! Welcome to a football stats generator")
         print("The available options are as follows:")
-        main() 
+        main()
 
     while team_name not in (options):
         print("\nYou entered a wrong option, Please enter a correct option")
@@ -98,22 +104,23 @@ def top_scorers():
         if int(row[3]) > 0:
             goal_scorers.append(row)
 
-
     goal_scorers.sort(key=lambda x: int(x[3]))
     goal_scorers.reverse()
     goal_scorers[:4]
     print(tabulate(goal_scorers))
 
+
 def appearances():
     """
-    function to compare players appearances and return a value if their appearances after over 100 for their team.
+    function to compare players appearances and return
+    a value if their appearances after over 100 for their team.
     It then prints the results to the terminal/console
     """
     player_apps = []
 
-    options = 'man united, man city, liverpool, chelsea, home'   
+    options = 'man united, man city, liverpool, chelsea, home'
     print(f"1: {options}")
-    team_name = input("\nPlease enter team name to see players with over 100 appearances for that team:\n")
+    team_name = input("\nEnter Team To See Players With 100 Appearances:\n")
     print(f"you have entered: {team_name}")
 
     if team_name == 'home':
@@ -132,11 +139,11 @@ def appearances():
         if int(row[2]) > 100:
             player_apps.append(row)
 
-
     player_apps.sort(key=lambda x: int(x[2]))
     player_apps.reverse()
     player_apps[:4]
     print(tabulate(player_apps))
+
 
 def ages():
     """
@@ -145,9 +152,9 @@ def ages():
     """
     player_ages = []
 
-    options = 'man united, man city, liverpool, chelsea, home'   
+    options = 'man united, man city, liverpool, chelsea, home'
     print(f"1: {options}")
-    team_name = input("\nPlease enter team name to see players ages in an ordered list:\n")
+    team_name = input("\nPlease Team To See Players Ages:\n")
     print(f"you have entered: {team_name}")
 
     if team_name == 'home':
@@ -171,13 +178,13 @@ def ages():
     player_ages[:4]
     print(tabulate(player_ages))
 
+#
+# 'def overall_top_stats():
 
-#def overall_top_stats():
-#
-#
+
 #    options = 'most goals, most appearances, most clean sheets, home'
 #    print(f"1: {options}")
-#    top_stats = input("Please enter an option to see the overall top players:\n")
+#    top_stats = input("Enter an Option To See The Overall Top Players:\n")
 #    print(f"you have entered: {top_stats}")
 
 #    if top_stats == 'home':
@@ -189,7 +196,7 @@ def ages():
 #        print("You entered a wrong option, Please enter a correct option")
 #        print(f"1: {options}")
 #        top_stats = input()
-    
+
 #    for value in data.keys():
 #        for row in data[value]:
 #            if f"{top_stats}" in row:
@@ -201,6 +208,7 @@ def ages():
 #        overall_top_stats.reverse()
 #        overall_top_stats[:10]
 #        print(tabulate[top_stats])
+
 
 def repeat():
     """
@@ -214,8 +222,6 @@ def repeat():
         exit()
 
 
-
-
 def main():
     """
     Run all program functions
@@ -225,7 +231,7 @@ def main():
     top_scorers()
     appearances()
     ages()
-    #overall_top_stats()
+    # 'overall_top_stats()
     repeat()
 
 main()
