@@ -203,7 +203,9 @@ def ages():
 #        print(tabulate[top_stats])
 
 def repeat():
-    
+    """
+    Gives user option to go back to start or exit program
+    """
     print("Do you want to go back to the start?")
     ans = input()
     if ans == 'yes':
