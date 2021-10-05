@@ -159,7 +159,7 @@ def ages():
 
     if team_name == 'home':
         print("Hi! Welcome to a Football Stats Generator")
-        print("The Available Options Are As Follows:"))
+        print("The Available Options Are As Follows:")
         main()
 
     while team_name not in (options):
