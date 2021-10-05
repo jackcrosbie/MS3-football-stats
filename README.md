@@ -148,6 +148,17 @@ This made the information easy to read and compare. Examples of the tables are b
 ![image](https://user-images.githubusercontent.com/82109134/136053276-33b2687d-9f83-4bbd-80c6-77336a2ec0d3.png)  
 
 
+## Bugs and Fixes
+
+- Gspread and Tabulate Errors:
+  Upong the inital deployment of my project I got 'ModuleNotFoundError: No module named gspread' and after that  
+  i got 'ModuleNotFoundError: No module named tabulate'
+  
+  These occured due to errors in my requirements.txt file.  
+  After doing some reading online I found the 'pip3 freeze > requirements.txt' command which put the proper information in my requirements.txt file and sorted the above
+  stated issue.
+
+
 
 
 
