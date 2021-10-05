@@ -70,8 +70,8 @@ def user_commands_2(team_name):
     res = [i for i in data[team_name] if position.capitalize() in i]
     print(tabulate(res))
 
-print("Hi! Welcome To a Football Stats Generator")
-print("The Available Options Are As Follows:")
+print("Hi! Welcome To a Football Stats Generator\n")
+print("The Available Options Are As Follows:\n")
 
 
 def top_scorers():
@@ -89,8 +89,8 @@ def top_scorers():
     print(f"you have entered: {team_name}")
 
     if team_name == 'home':
-        print("Hi! Welcome To a Football Stats Generator")
-        print("The Available Options Are As Follows:")
+        print("Hi! Welcome To a Football Stats Generator\n")
+        print("The Available Options Are As Follows:\n")
         main()
 
     while team_name not in (options):
@@ -124,8 +124,8 @@ def appearances():
     print(f"You Have Entered: {team_name}")
 
     if team_name == 'home':
-        print("Hi! Welcome to a Football Stats Generator")
-        print("The Available Options Are As Follows:")
+        print("Hi! Welcome to a Football Stats Generator\n")
+        print("The Available Options Are As Follows:\n")
         main()
 
     while team_name not in (options):
@@ -158,8 +158,8 @@ def ages():
     print(f"You Have Entered: {team_name}")
 
     if team_name == 'home':
-        print("Hi! Welcome to a Football Stats Generator")
-        print("The Available Options Are As Follows:")
+        print("Hi! Welcome to a Football Stats Generator\n")
+        print("The Available Options Are As Follows:\n")
         main()
 
     while team_name not in (options):
