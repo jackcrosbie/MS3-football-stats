@@ -33,11 +33,11 @@ def user_commands():
     options = 'man united, man city, liverpool, chelsea'
     print(f"1: {options}")
 
-    team_name = input("Please enter a string:\n")
-    print(f"You have entered {team_name}\n")
+    team_name = input("Please Enter A Team Name:\n")
+    print(f"You Have Entered {team_name}\n")
 
     while team_name not in data:
-        print("You entered a wrong option, Please enter a correct option")
+        print("You Entered a Wrong Option, Please Enter A Correct Option")
         print(f"1: {options}")
         team_name = input()
 
@@ -54,24 +54,24 @@ def user_commands_2(team_name):
     options_1 = 'goalkeeper, defender, midfielder,\nforward, home'
     print(f"1: {options_1}")
 
-    position = input("\nPlease enter a string:\n")
-    print(f"You have entered {position}\n")
+    position = input("\nPlease Enter a Position:\n")
+    print(f"You Have Entered {position}\n")
 
     while position not in (options_1):
-        print("\nYou entered a wrong option, Please enter a correct option")
+        print("\nYou Entered a Wrong Option, Please Enter a Correct Option")
         print(f"1: {options_1}")
         position = input()
 
     if position == 'home':
         print("Hi! Welcome to a Football Stats Generator")
-        print("The available options are as follows:")
+        print("The Available Options Are As Follows:")
         main()
 
     res = [i for i in data[team_name] if position.capitalize() in i]
     print(tabulate(res))
 
-print("Hi! Welcome to a football stats generator")
-print("The available options are as follows:")
+print("Hi! Welcome To a Football Stats Generator")
+print("The Available Options Are As Follows:")
 
 
 def top_scorers():
@@ -89,12 +89,12 @@ def top_scorers():
     print(f"you have entered: {team_name}")
 
     if team_name == 'home':
-        print("Hi! Welcome to a football stats generator")
-        print("The available options are as follows:")
+        print("Hi! Welcome To a Football Stats Generator")
+        print("The Available Options Are As Follows:")
         main()
 
     while team_name not in (options):
-        print("\nYou entered a wrong option, Please enter a correct option")
+        print("\nYou Entered a Wrong Option, Please Enter a Correct Option")
         print(f"1: {options}")
         team_name = input()
 
@@ -121,15 +121,15 @@ def appearances():
     options = 'man united, man city, liverpool, chelsea, home'
     print(f"1: {options}")
     team_name = input("\nEnter Team To See Players With 100 Appearances:\n")
-    print(f"you have entered: {team_name}")
+    print(f"You Have Entered: {team_name}")
 
     if team_name == 'home':
-        print("Hi! Welcome to a football stats generator")
-        print("The available options are as follows:")
+        print("Hi! Welcome to a Football Stats Generator")
+        print("The Available Options Are As Follows:")
         main()
 
     while team_name not in (options):
-        print("\nYou entered a wrong option, Please enter a correct option")
+        print("\nYou Entered a Wrong Option, Please Enter a Correct Option")
         print(f"1: {options}")
         team_name = input()
 
@@ -155,15 +155,15 @@ def ages():
     options = 'man united, man city, liverpool, chelsea, home'
     print(f"1: {options}")
     team_name = input("\nPlease Team To See Players Ages:\n")
-    print(f"you have entered: {team_name}")
+    print(f"You Have Entered: {team_name}")
 
     if team_name == 'home':
-        print("Hi! Welcome to a football stats generator")
-        print("The available options are as follows:")
+        print("Hi! Welcome to a Football Stats Generator")
+        print("The Available Options Are As Follows:"))
         main()
 
     while team_name not in (options):
-        print("\nYou entered a wrong option, Please enter a correct option")
+        print("\nYou Entered a Wrong Option, Please Enter a Correct Option")
         print(f"1: {options}")
         team_name = input()
 
