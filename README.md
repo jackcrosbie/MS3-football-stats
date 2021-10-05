@@ -93,4 +93,65 @@ The following are a list of technologies I used to enable my project to work eff
   
 ## Testing
 
+*'As a user I want to view statistics for each premier league football team'*  
+The first option when you run the program is to see the statistical breakdown of the teams listed
+
+![image](https://user-images.githubusercontent.com/82109134/136047330-952b8105-5330-4522-bb5e-6cd88c05884c.png)
+
+Above is an example where I entered 'man city'
+
+
+*'As a user I want to be able to break down the statistics into various categories'*  
+This is done throughout the program. Once you pull the inital data from the first list of options you can break that down further to show players based on a position you select
+
+![image](https://user-images.githubusercontent.com/82109134/136049054-b6b4a430-361f-4728-9a09-cd998c4d1b14.png)  
+
+Above example is 'man city' players filtered by their position as a 'forward'
+
+![image](https://user-images.githubusercontent.com/82109134/136049429-37c333a7-6ae2-4d40-8ce6-a0e4a97e35c6.png)  
+
+The image above now shows the option to see a teams top goal scorers
+
+![image](https://user-images.githubusercontent.com/82109134/136050109-b37e5453-943c-45f9-8064-afd458075c96.png)  
+
+Above image shows the option to see players who have made over 100 appearances for the team selected
+
+![image](https://user-images.githubusercontent.com/82109134/136050248-7914f4c6-adea-45bd-aada-8b4d41f46be9.png)  
+
+Example above shows the option to break down the selected team in order from age (oldest to youngest)
+
+
+*'As a user I want the option to go back to the start of the program while using it'*  
+After the inital list of options I added a home option which will bring you back to the start of the program when entered.
+As well as this I have entered an option to return to the start once the program has reached the end (shown below)
+
+![image](https://user-images.githubusercontent.com/82109134/136050700-876b6739-887d-4cd9-adae-8bb831f5ac0b.png)
+
+Home option in most of the option lists:  
+![image](https://user-images.githubusercontent.com/82109134/136050844-8c869f3f-3f4c-42d8-b527-6d684cc62365.png)   
+![image](https://user-images.githubusercontent.com/82109134/136052397-d29762e2-f1ad-4531-a805-530ea65e7d2d.png)  
+![image](https://user-images.githubusercontent.com/82109134/136052635-d2fe5c4f-7ec1-4de3-ac40-91eac5e2914e.png)  
+
+
+*'As a user I want to be able to compare statistics across different teams'*
+
+
+
+*'As a user I want to the data presented in a clear easy to read table'*
+Using tabulate I was able to get my data presented in a clear uniformed manner.  
+This made the information easy to read and compare. Examples of the tables are below:  
+
+![image](https://user-images.githubusercontent.com/82109134/136053043-1ba93d2b-7e98-423e-a390-4736e8217fc7.png)  
+
+![image](https://user-images.githubusercontent.com/82109134/136053206-e4023040-2c30-404f-84ad-8172561ec074.png)  
+
+![image](https://user-images.githubusercontent.com/82109134/136053276-33b2687d-9f83-4bbd-80c6-77336a2ec0d3.png)  
+
+
+
+
+
+
+
+
 
