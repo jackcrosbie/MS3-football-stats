@@ -75,3 +75,22 @@ The following are a list of technologies I used to enable my project to work eff
     - Google Auth: Enabled the application to interact with googlesheets.
     - Tabulate: Used to present all the data in table form making it clearer and easier to read.
     - PD8: Used to validate, format and debug my Python code
+
+- Github:
+  Used Github to store the code and push it to the Heroku Terminal
+  
+- Gitpod:
+  Used as the development envoirnment for the project
+  
+- Heroku:
+  Used to deploy the project
+  
+ - Google Sheets:
+   Used to store all the data for the project. The data is all drawn from the google sheet
+   
+- Pep8:
+  Used to test my code to reveal any errors in my code format and written code
+  
+## Testing
+
+
