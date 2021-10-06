@@ -157,7 +157,64 @@ This made the information easy to read and compare. Examples of the tables are b
   These occured due to errors in my requirements.txt file.  
   After doing some reading online I found the 'pip3 freeze > requirements.txt' command which put the proper information in my requirements.txt file and sorted the above
   stated issue.
+  
+ - Deployment Error:
+   During the process of fixing the gspread and tabulate errors I must've accidentally deleted my package.json file which meant the subsequent builds failed. To fix this I  
+   went back through build histoy, found the last successful build and when I compared this to the failing builds I saw the package.json file had gone missing. Copied the  
+   information from the file in the successful build to my current directory and It enabled the builds to build successfully from there on.
+   
+  - PEP8 Python Validator:
+    Upon completion of writing my code. I ran it through the PEP8 online validator. This pointed out errors in my syntax and whitespace after lines of code in some instances.  
+    I tidied all this up and as a result my code is running through the validator with zero errors.
+    
+![image](https://user-images.githubusercontent.com/82109134/136267008-77ab1458-a9f2-48a3-91bf-1c4334d329ba.png)
 
+
+## Deployment
+
+The master branch of this repository has been used for the deployed version of this application.
+
+Using Github & Gitpod
+To deploy my command-line interface application, I had to use the Code Institute Python Essentials Template, as this enables the application to be properly viewed on Heroku using a mock terminal.
+
+- Click the Use This Template button.  
+-  Add a repository name and brief description.
+-  Click the Create Repository from Template to create your repository.
+-  To create a Gitpod workspace you then need to click Gitpod, this can take a few minutes.
+-  When you want to work on the project it is best to open the workspace from Gitpod (rather than Github) as this will open your previous workspace rather than creating a new one. You should pin the workspace so that it isn't deleted.
+-  Committing your work should be done often and should have clear/explanatory messages, use the following commands to make your commits:
+   -  git add .: adds all modified files to a staging area
+   -  git commit -m "A message explaining your commit": commits all changes to a local repository.
+   -  git push: pushes all your committed changes to your Github repository.
+
+### Creating an Application with Heroku
+
+I followed the below steps using the Code Institute tutorial:
+
+- The following command in the Gitpod CLI will create the relevant files needed for Heroku to install your project dependencies pip3 freeze --local > requirements.txt. Please note this file should be added to a .gitignore file to prevent the file from being committed.
+1. Go to Heroku.com and log in; if you do not already have an account then you will need to create one.
+2. Click the New dropdown and select Create New App.
+3. Enter a name for your new project, all Heroku apps need to have a unique name, you will be prompted if you need to change it.
+4. Select the region you are working in.
+
+Heroku Settings You will need to set your Environment Variables - this is a key step to ensuring your application is deployed properly.
+
+- In the Settings tab, click on Reveal Config Vars and set the following variables:
+  - If using credentials you will need to add the credentials as a variable, the key is the name 'CREDS' and the value is the contents of your creds JSON
+  - Add key: PORT & value 8000
+- Buildpacks are also required for proper deployment, simply click Add buildpack and search for the ones that you require.
+  - For this project, I needed to add Python and Node.js, in this order.
+
+Heroku Deployment In the Deploy tab:
+
+- Connect your Heroku account to your Github Repository following these steps:
+  - Click on the Deploy tab and choose Github-Connect to Github.
+  - Enter the GitHub repository name and click on Search.
+  - Choose the correct repository for your application and click on Connect.
+- You can then choose to deploy the project manually or automatically, automatic deployment will generate a new application every time you push a change to Github, whereas manual deployment requires you to push the Deploy Branch button whenever you want a change made.
+- Once you have chosen your deployment method and have clicked Deploy Branch your application will be built and you should see the below View button, click this to open your application:
+
+![image](https://user-images.githubusercontent.com/82109134/136269827-83c7590b-5b04-4ec0-887f-df7463a22ecc.png)
 
 
 
