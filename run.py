@@ -30,10 +30,10 @@ def user_commands():
     """
     gives commands the user is able to input to receive different data sets
     """
-    options = 'man united, man city, liverpool, chelsea'
+    options = 'Man United, Man City, Liverpool, Chelsea'
     print(f"1: {options}")
 
-    team_name = input("Please Enter A Team Name:\n")
+    team_name = input("Please Enter A Team Name:\n").casefold()
     print(f"You Have Entered {team_name}\n")
 
     while team_name not in data:
@@ -54,15 +54,15 @@ def user_commands_2(team_name):
     options_1 = 'goalkeeper, defender, midfielder,\nforward, home'
     print(f"1: {options_1}")
 
-    position = input("\nPlease Enter a Position:\n")
+    position = input("\nPlease Enter a Position:\n").casefold()
     print(f"You Have Entered {position}\n")
 
-    while position not in (options_1):
+    while position.casefold() not in (options_1):
         print("\nYou Entered a Wrong Option, Please Enter a Correct Option")
         print(f"1: {options_1}")
         position = input()
 
-    if position == 'home':
+    if position.casefold() == 'home':
         print("Hi! Welcome to a Football Stats Generator")
         print("The Available Options Are As Follows:")
         main()
@@ -83,9 +83,9 @@ def top_scorers():
     """
     goal_scorers = []
 
-    options = 'man united, man city, liverpool, chelsea, home'
-    print(f"1: {options}")
-    team_name = input("\nPlease Enter Team To See Top Goal Scorers:\n")
+    options = '\nman united, man city, liverpool, chelsea, home'
+    print(f"{options}")
+    team_name = input("\nPlease Enter Team To See Top Goal Scorers:\n").casefold()
     print(f"you have entered: {team_name}")
 
     if team_name == 'home':
@@ -120,7 +120,7 @@ def appearances():
 
     options = 'man united, man city, liverpool, chelsea, home'
     print(f"1: {options}")
-    team_name = input("\nEnter Team To See Players With 100 Appearances:\n")
+    team_name = input("\nEnter Team To See Players With 100 Appearances:\n").casefold()
     print(f"You Have Entered: {team_name}")
 
     if team_name == 'home':
@@ -154,7 +154,7 @@ def ages():
 
     options = 'man united, man city, liverpool, chelsea, home'
     print(f"1: {options}")
-    team_name = input("\nPlease Team To See Players Ages:\n")
+    team_name = input("\nPlease Team To See Players Ages:\n").casefold()
     print(f"You Have Entered: {team_name}")
 
     if team_name == 'home':
