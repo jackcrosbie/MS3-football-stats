@@ -217,6 +217,16 @@ Heroku Deployment In the Deploy tab:
 ![image](https://user-images.githubusercontent.com/82109134/136269827-83c7590b-5b04-4ec0-887f-df7463a22ecc.png)
 
 
+## Credits
+
+All the code used is entirely original and written by me. However I drew on resources such as Stack Overflow to fix various bugs and issues i encountered.  
+I also used the website https://pypi.org/project/tabulate/ to help me use tabulate for my project.
+
+## Acknowledgements 
+
+As always I want to thank my mentor Aaron Sinnott for his continued advice, support and feedback throughout this project.
+I would also like to thank my peer Daisy Gunn for her support, advice and general encouragement.
+
 
 
 
