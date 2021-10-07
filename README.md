@@ -24,6 +24,11 @@ User Stories:
 
 ### Structure
 
+![image](https://user-images.githubusercontent.com/82109134/136383881-56bde093-0c3b-4126-992c-8e19b8cd13e9.png)
+![image](https://user-images.githubusercontent.com/82109134/136383978-0e95b719-2712-4b99-89f8-7977420a9b4b.png)
+
+
+
 ## Features
 
 ### Players List
