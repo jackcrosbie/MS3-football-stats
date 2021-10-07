@@ -20,11 +20,9 @@ data = {
     "chelsea": SHEET.worksheet('chelsea').get_all_values(),
     "liverpool": SHEET.worksheet('liverpool').get_all_values()
 }
-
 team_name = ""
 position = ""
 top_stats = ""
-
 
 def user_commands():
     """
@@ -68,7 +66,8 @@ def user_commands_2(team_name):
         main()
 
     res = [i for i in data[team_name] if position.capitalize() in i]
-    print(tabulate(res))
+    to_print = [data[team_name][0]] + res
+    print(tabulate(to_print))
 
 print("Hi! Welcome To a Football Stats Generator\n")
 print("The Available Options Are As Follows:\n")
@@ -107,7 +106,7 @@ def top_scorers():
     goal_scorers.sort(key=lambda x: int(x[3]))
     goal_scorers.reverse()
     goal_scorers[:4]
-    print(tabulate(goal_scorers))
+    print(tabulate(goal_scorers)[0])
 
 
 def appearances():
@@ -179,31 +178,30 @@ def ages():
     print(tabulate(player_ages))
 
 #
-# 'def overall_top_stats():
-
-
+# def overall_top_stats():
+#
 #    options = 'most goals, most appearances, most clean sheets, home'
 #    print(f"1: {options}")
 #    top_stats = input("Enter an Option To See The Overall Top Players:\n")
 #    print(f"you have entered: {top_stats}")
-
+#
 #    if top_stats == 'home':
 #        print("Hi! Welcome to a football stats generator")
 #        print("The available options are as follows:")
 #        main()
-
+#
 #    while top_stats not in options:
 #        print("You entered a wrong option, Please enter a correct option")
 #        print(f"1: {options}")
 #        top_stats = input()
-
+#
 #    for value in data.keys():
 #        for row in data[value]:
 #            if f"{top_stats}" in row:
 #                continue
 #            if int(row[""]) > 50:
 #                overall_top_stats.append(row)
-
+#
 #        overall_top_stats.sort(key=lambda x: int(x[3]))
 #        overall_top_stats.reverse()
 #        overall_top_stats[:10]
