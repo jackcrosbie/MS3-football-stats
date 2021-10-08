@@ -24,6 +24,8 @@ User Stories:
 
 ### Structure
 
+Below is a data form chart for my project  
+
 ![image](https://user-images.githubusercontent.com/82109134/136383881-56bde093-0c3b-4126-992c-8e19b8cd13e9.png)
 ![image](https://user-images.githubusercontent.com/82109134/136383978-0e95b719-2712-4b99-89f8-7977420a9b4b.png)
 
@@ -139,7 +141,9 @@ Home option in most of the option lists:
 
 
 *'As a user I want to be able to compare statistics across different teams'*
-
+At the current moment I was unable to get my final function working properly.
+I wanted to enable the user to input, for example, "goal scorers" and to get the top ten across all 4 teams.
+I have commented out the block of code I was working on to attempt this feat.
 
 
 *'As a user I want to the data presented in a clear easy to read table'*
@@ -171,6 +175,10 @@ This made the information easy to read and compare. Examples of the tables are b
   - PEP8 Python Validator:
     Upon completion of writing my code. I ran it through the PEP8 online validator. This pointed out errors in my syntax and whitespace after lines of code in some instances.  
     I tidied all this up and as a result my code is running through the validator with zero errors.
+    
+ - Printing Column Headings in Function using Lambda:
+   In the functions which use the Lambda I currently cannot figure out how to print the results to the terminal with the column headings attached.
+
     
 ![image](https://user-images.githubusercontent.com/82109134/136267008-77ab1458-a9f2-48a3-91bf-1c4334d329ba.png)
 
